@@ -26,7 +26,7 @@ function pageTransition(){
       },1000);
     }
     
-    else if (window.location.pathname == '/Projects/scenedetector.html'|| window.location.pathname == '/Projects/meltdown.html' || window.location.pathname == '/Projects/dropbox.html' ){
+    else if (window.location.pathname == '/about.html'|| window.location.pathname == '/Projects/scenedetector.html'|| window.location.pathname == '/Projects/meltdown.html' || window.location.pathname == '/Projects/dropbox.html' ){
       setTimeout(()=>{
         cancelAnimationFrame(startStop);
         context.clearRect(0, 0, canvas.width, canvas.height);
