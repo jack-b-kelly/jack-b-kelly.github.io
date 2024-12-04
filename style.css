@@ -2,8 +2,26 @@ html,body{
     margin: 0;
     padding: 0;
     background: #000;
-    color: white;
+    color: black;
    
+}
+
+.header h1 {
+    font-size: 3rem;  /* Adjust the size of the title */
+    font-weight: bold; /* Make the title bold */
+    color: #222;       /* Dark text color for the title */
+    z-index: 2;         /* Ensure the title stays above the image */
+}
+
+.header-image {
+    position: absolute;         /* Position the image absolutely */
+    top: 50%;                   /* Vertically center the image in the viewport */
+    left: 15%;               /* Position the image on the left third of the screen */
+    transform: translateY(-50%); /* Vertically center the image */
+    width: 300px;               /* Fixed width for the image */
+    height: auto;               /* Maintain aspect ratio */
+    border-radius: 8px;         /* Optional: Add rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
 
 .loading-screen{
@@ -38,9 +56,7 @@ h1{
     
     animation-name: header-BG;
     animation-duration: 90s;
-    animation-iteration-count: infinite;
-    
-    
+    animation-iteration-count: infinite; 
 }
 .nav-bar{
     position: absolute;
@@ -141,8 +157,8 @@ h1{
     margin: 5%;
     opacity: 100%;
     font-family: 'Courier New', Courier, monospace;
-    border: 1px solid white;
-    background-color: black;
+    border: 1px solid black;
+    background-color: white;
 
 }
 

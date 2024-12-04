@@ -26,7 +26,7 @@ function pageTransition(){
       },1000);
     }
     
-    else if (window.location.pathname == '/about.html'|| window.location.pathname == '/Projects/scenedetector.html'|| window.location.pathname == '/Projects/meltdown.html' || window.location.pathname == '/Projects/dropbox.html' ){
+    else if (window.location.pathname == '/about.html'|| window.location.pathname == '/Projects/scenedetector.html'|| window.location.pathname == '/Projects/meltdown.html' || window.location.pathname == '/Projects/dropbox.html' || window.location.pathname == '/Projects/bulk_emails.html' ){
       setTimeout(()=>{
         cancelAnimationFrame(startStop);
         context.clearRect(0, 0, canvas.width, canvas.height);
@@ -92,18 +92,18 @@ $(function(){
 
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext("2d");
-var width = window.innerWidth*2;
-var height = window.innerHeight*2;
+var width = window.innerWidth * 2;
+var height = window.innerHeight * 2;
 canvas.height = height;
 canvas.width = width;
 
-// Each sucessive square is stacked counter-clockwise around the existing group. This array of pairs will instruct the direction each arc takes within the square.
+// Each successive square is stacked counter-clockwise around the existing group. This array of pairs will instruct the direction each arc takes within the square.
 var directions = [
- [-1, -1],
+  [-1, -1],
   [-1, 1],
   [1, 1],
   [1, -1]
-  ];
+];
 
 // This will help instruct where each successive arc is placed.
 var arcs = [
@@ -120,7 +120,7 @@ var colors = [
   ['#908F79']
 ];
 
-var size = 5;
+var size = 4;
 var startX = (width - size) / 2;
 var startY = (height - 5) / 2;
 
@@ -130,22 +130,18 @@ function fibonacciSpiral(startX, startY, size, lastValue, value, step, xAdjust, 
   }
   if (step == 1) {
     var yAdjust = size;
-    //var lastYAdjust = 10;
   }
   if (value > 6008) {
-    return
+    return;
   } else {
     context.arc(startX + xAdjust * directions[i][0], startY + yAdjust * directions[i][1], value * size, arcs[i][0] * Math.PI, arcs[i][1] * Math.PI, true);
-    i++
+    i++;
     if ((step % 2 == 0)) {
       var old = yAdjust;
       fibonacciSpiral(startX, startY, size, value, (lastValue + value), (step + 1), xAdjust, Math.pow((Math.sqrt(lastYAdjust) + Math.sqrt(yAdjust)), 2), old, i)
-
-    }
-    else {
+    } else {
       fibonacciSpiral(startX, startY, size, value, (lastValue + value), (step + 1), xAdjust + yAdjust, yAdjust, lastYAdjust, i)
     }
-
   }
 }
 
@@ -158,13 +154,10 @@ var ways = [
 
 function drawRect(startX, startY, size, moveX, moveY, lastValue, value, i) {
   if (value > 6008) {
-    return
+    return;
   }
 
-
   context.fillStyle = colors[i];
-
-
   context.fillRect(startX + ways[i][0] * moveX * size, startY + ways[i][1] * moveY * size, value * size, value * size);
   context.rect(startX + ways[i][0] * moveX * size, startY + ways[i][1] * moveY * size, value * size, value * size);
   if (i == 3) {
@@ -175,80 +168,72 @@ function drawRect(startX, startY, size, moveX, moveY, lastValue, value, i) {
     drawRect(startX, startY, size, moveX, (value - moveY), value, (lastValue + value), (i + 1));
   } else {
     drawRect(startX, startY, size, value - moveX, (lastValue - moveY), value, (lastValue + value), (i + 1));
-
   }
 }
 
-// I arrived at the value for size visually, just trying to eliminate jumpiness. There should be a way to compute this precisely...
+// Adjusting the size multiplier to make the animation slower (3 times slower)
 var size = 0.2;
 var startStop;
-var i = 0
-var j = 0
+var i = 0;
+var j = 0;
+
 function animate() {
-  if (size >1.3) {
+  if (size > 1.3) {
     size = 0.2;
   }
-  
-  context.beginPath()  
- 
+
+  context.beginPath();  
+
   fibonacciSpiral(startX, startY, size, 1, 1, 0, 0, 0, 0, 0);
- 
-  //color animation can go here
-  const randomColor = ["#" + Math.floor(Math.random() * 16777215).toString(16)]
-  if (j % 225 == 0){ 
 
-    colors[i]=randomColor;
+  // Color animation
+  const randomColor = ["#" + Math.floor(Math.random() * 16777215).toString(16)];
+  if (j % 225 == 0) { 
+    colors[i] = randomColor;
     context.fillStyle = colors[i];
-    }
+  }
 
-    drawRect(startX, startY, size, 0, 1, 1, 1, 0);
-  context.strokeStyle = 'white'
+  drawRect(startX, startY, size, 0, 1, 1, 1, 0);
+  context.strokeStyle = 'white';
   context.lineWidth = 1;
-  //context.stroke();
-  size = size * 1.027;
-  
-  startStop = requestAnimationFrame(animate);
-  
 
-  i++
-  j++
-  if(i>3){
-    i=0
+  // Slow down the animation by reducing the growth rate of size (new value: 1.009)
+  size = size * 1.009; // This will make the animation go three times as slow
+
+  startStop = requestAnimationFrame(animate);
+
+  i++;
+  j++;
+  if (i > 3) {
+    i = 0;
   }
 }
 
 function one_frame() {
-  if (size >1.3) {
+  if (size > 1.3) {
     size = 0.2;
   }
-  
-  context.beginPath()  
- 
+
+  context.beginPath();  
+
   fibonacciSpiral(startX, startY, size, 1, 1, 0, 0, 0, 0, 0);
- 
-  //color animation can go here
-  const randomColor = ["#" + Math.floor(Math.random() * 16777215).toString(16)]
-  if (j % 225 == 0){ 
 
-    colors[i]=randomColor;
+  // Color animation
+  const randomColor = ["#" + Math.floor(Math.random() * 16777215).toString(16)];
+  if (j % 225 == 0) { 
+    colors[i] = randomColor;
     context.fillStyle = colors[i];
-    }
+  }
 
-    drawRect(startX, startY, size, 0, 1, 1, 1, 0);
+  drawRect(startX, startY, size, 0, 1, 1, 1, 0);
   context.lineWidth = 1;
-  //context.stroke();
-  size = size * 1.027;
-  i++
-  j++
-  if(i>3){
-    i=0
+
+  size = size * 1.009; // Adjusted multiplier to slow it down further (3x slower)
+  i++;
+  j++;
+  if (i > 3) {
+    i = 0;
   }
 }
 
 requestAnimationFrame(animate);
-
-
-
-
- 
-
