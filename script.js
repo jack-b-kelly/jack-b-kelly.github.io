@@ -12,7 +12,7 @@ function generateLightningBolt() {
     lightning.style.left = `${xPos}px`;
     lightning.style.top = `${yPos}px`;
     
-    // Add random rotation to make the lightning more jagged
+    // Random rotation for more chaos, optional for visual effect
     const rotation = Math.random() * 40 - 20; // Random rotation between -20 and 20 degrees
     lightning.style.transform = `rotate(${rotation}deg)`;
     
@@ -22,7 +22,7 @@ function generateLightningBolt() {
     // Remove the lightning bolt after the animation is complete
     setTimeout(() => {
       lightning.remove();
-    }, 300); // This time matches the animation duration
+    }, 1000); // This time matches the animation duration
   }
   
   // Generate lightning bolts at random intervals
