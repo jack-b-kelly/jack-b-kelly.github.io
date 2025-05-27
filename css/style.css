@@ -1,0 +1,151 @@
+
+/* RAIN ANIMATION */
+#rain-container {
+    /*background: black; */
+    color: blue;
+    font-family: monospace;
+    white-space: pre;
+    overflow: hidden;
+    width: 100%;
+    height: 600px; /* or auto if you want it dynamic */
+    position: relative;
+  }
+  
+  #rain {
+    line-height: 1;
+    margin: 0;
+    color: blue;
+  }
+  
+
+/*BOUNCING Containter*/
+#bouncing-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+
+  overflow: hidden;
+
+}
+
+.bouncing-image {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  transition: transform 0.1s;
+}
+
+/* TEXT FORMATTING */
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@400,700&display=swap');
+.title{
+  font-family: 'Switzer', sans-serif;
+  font-weight: 700;
+  font-size: 4.5em;
+  margin: 5%;
+}
+
+.body-text {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.2em;
+  margin: 5%;
+}
+.margin{
+  margin: 5%;
+}
+.subheader {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1.5em; /* Optional: adjust size as needed */
+    font-weight: bold; /* Optional: make it stand out */
+    margin-bottom: 10px; /* Optional: spacing below */
+  }
+
+  /* IMAGE FORMATTING */
+  .image-format {
+    margin: 5%;
+  }
+
+  /* GET RID OF OVERFLOW */
+
+  body {
+    margin: 5% 10% 10% 10%; /* top right bottom left */
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;  /* Always show vertical scrollbar */
+    overflow: hidden; /* Prevents all scrollbars */
+    height: 100%; 
+  }
+  html {
+    overflow-y: scroll;  /* Always reserve scrollbar space */
+  }
+
+
+
+  #upBtn {
+    position: fixed;
+    font-family: Verdana, Geneva, sans-serif;
+    top: 20px;         /* Distance from top */
+    right: 20px;       /* Distance from right edge */
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  #upBtn:hover {
+    background-color: #444;
+  }
+  
+  #downBtn {
+    position: fixed;
+    font-family: Verdana, Geneva, sans-serif;
+    bottom: 20px;      /* Distance from bottom */
+    right: 20px;       /* Distance from right edge */
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  #downBtn:hover {
+    background-color: #444;
+  }
+
+  #page-transition-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: white;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+
+  .gist-container {
+    max-width: 800px;
+    max-height: 400px;
+    overflow: auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    background-color: #1e1e1e; /* dark background like VS Code */
+    padding: 10px;
+  }
+
+  .gist-container * {
+    color: black !important; /* light text */
+  }

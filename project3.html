@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jack Kelly - Portfolio</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/frame_animation.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/transition.js"></script>
+
+
+  </head>
+  <body>
+    
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center title">
+          Email Scraping / Bulk Email GUI
+        </h3>
+
+        <div class="row">
+          <div class="col-md-4 d-flex justify-content-center">
+            <img src="/Assets/computer_gifs/output.gif" class="img-fluid w-50" alt="GIF 1" id="div1">
+          </div>
+          <div class="col-md-4 d-flex justify-content-center">
+            <img src="/Assets/computer_gifs/output2.gif" class="img-fluid w-50" alt="GIF 2" id="div2">
+          </div>
+          <div class="col-md-4 d-flex justify-content-center">
+            <img src="/Assets/computer_gifs/output3.gif" class="img-fluid w-50" alt="GIF 3">
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+              <p class="body-text">
+                I made a system for scraping the internet for email addresses; I wrote a Python script using selenium (browser automation module) to open up a duckduckgo search page and run search queries. The URL’s from the queries are stored in a list and then traversed to find emails. These emails are sent to a dedicated IP so that multiple computers can scrape at once.
+                <br><br>
+                Once the email addresses are collected; I have another script that can send bulk emails from multiple gmail accounts so as not to exceed the daily allowable sent emails for any one account. 
+              </p>
+          </div>
+
+
+        <div class="row">
+            <img src="/Assets/bulk_email_gui.png" 
+               class="img-fluid w-75 image-format d-block mx-auto" >
+            <div class ="col-md-6">
+              <div class="body-text text-start"><i>GUI that allows the user to upload an Excel with emails and other information. You can dynamically add elements from the Excel file into the body of the email with {}
+                <br><br>
+                See code below:
+              </i></div>
+            </div>   
+               
+        </div>
+
+
+        <div class="container my-4">
+            <div class="row justify-content-center">
+              <div class="col-md-8 text-center">
+                <div class="gist-container">
+                  <script src="https://gist.github.com/jack-b-kelly/4df6183cbc77ad945a66c556bffa979b.js"></script>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <p class="body-text">
+                This is my most artistic project and has yielded surprising results. I’ve used it to blast email potential clients, find art galleries for my paintings, and other mass outreach. You need to be creative to come up with queries to feed into duckduckgo; I’ve used a list of the 100 most common names + a profession to get more results. I’ve also used databases like Common Crawl which is a massive database containing metadata from websites around the internet for more URLs to scrape. 
+                <br><br>
+                Nobody else does this in my niche; and I’ve connected with a surprising amount of people — I used Craigslist as an inspiration for this project and tried to encapsulate the excitement anonymous connection on the internet in contrast to the nerfed and highly supervised connections you make on Facebook, Linkedin, and Instagram.
+                <br><br>
+                See the code here: See the code here: <a href="https://github.com/jack-b-kelly/bulk_email.git" target="_blank">Bulk Email - Shipping Server</a>
+              </p>
+          </div>
+
+        <div class="floating-buttons">
+            <button id="upBtn">[UP]</button>
+            <button id="downBtn">[DOWN]</button>
+        </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/rain.js"></script>
+    <script src="js/frames.js"></script>
+    <script src="js/bounce_container.js"></script>
+    <div id="page-transition-overlay"></div>
+  </body>
+</html>
