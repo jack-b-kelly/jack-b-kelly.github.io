@@ -38,6 +38,7 @@
 
 /* TEXT FORMATTING */
 @import url('https://api.fontshare.com/v2/css?f[]=switzer@400,700&display=swap');
+
 .title{
   font-family: 'Switzer', sans-serif;
   font-weight: 700;
@@ -50,16 +51,16 @@
   font-size: 1.2em;
   margin: 5%;
 }
-.margin{
-  margin: 5%;
-}
+
 .subheader {
     font-family: Verdana, Geneva, sans-serif;
     font-size: 1.5em; /* Optional: adjust size as needed */
     font-weight: bold; /* Optional: make it stand out */
     margin-bottom: 10px; /* Optional: spacing below */
   }
-
+  .margin{
+    margin: 5%;
+  }
   /* IMAGE FORMATTING */
   .image-format {
     margin: 5%;
