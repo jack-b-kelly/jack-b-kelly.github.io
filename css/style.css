@@ -1,24 +1,380 @@
 
-/* RAIN ANIMATION */
-#rain-container {
-    /*background: black; */
-    color: blue;
-    font-family: monospace;
-    white-space: pre;
-    overflow: hidden;
-    width: 100%;
-    height: 600px; /* or auto if you want it dynamic */
-    position: relative;
-  }
-  
-  #rain {
-    line-height: 1;
-    margin: 0;
-    color: blue;
-  }
-  
+@import url('https://api.fontshare.com/v2/css?f[]=recia@300,301,400,401,500,501,600,601,700,701,1,2&display=swap');
+html, body {
+  height: 100%;
+  margin: 1vh;
+  overflow: hidden;
+  font-family: 'Recia', sans-serif;
+  font-weight: 400; /* Regular */
+  overflow: hidden;
+}
 
-/*BOUNCING Containter*/
+p{
+ 
+  margin-bottom: 2vh;
+}
+h1{
+    font-size: 3rem;
+    font-weight: 500;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+h2{
+    font-size: 2rem;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+h3{
+    font: 1em;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.scroll-col {
+  height: 100vh;
+  overflow-y: auto;
+
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scroll-col::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+.shadow-dance-text {
+    font-size: 4rem;
+    color: #000000;
+    text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+    animation: shadow-dance 4s infinite;
+    text-align: center;
+}
+
+@keyframes shadow-dance {
+    0%, 100% {
+        text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+    }
+    50% {
+        text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+    }
+}
+
+.jack-picture {
+  width: 300px;
+  height: auto;
+  border-radius: 8px; /* optional rounded corners */
+}
+
+/* Wrapper: center everything */
+#emailApp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-family: sans-serif;
+}
+
+/* Tabs: horizontal center */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Minimal tab style */
+.tab {
+  padding: 5px 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.tab.active {
+  font-weight: bold;
+}
+
+/* Tab content: vertical layout, centered */
+.tab-content {
+  display: none;          /* hidden by default */
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tab-content.active {
+  display: flex;          /* visible when active */
+}
+
+/* Minimal input/button style */
+input, textarea, select, button {
+  width: 250px;
+  margin: 5px 0;
+}
+
+/* Timeline list */
+#timeline ul {
+  list-style: none;
+  padding: 0;
+}
+
+#timeline li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+
+/*terminal styles*/
+#terminal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;  /* fill parent width */
+  height: 300px; /* adjust as needed */
+}
+
+/* Terminal styling */
+#terminal {
+  background-color: #000;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 20px;
+  border-radius: 5px;
+  width: 600px;
+  max-width: 100%;
+  min-height: 200px;
+  overflow: auto;
+  box-shadow: 0 0 10px #00ff00;
+  text-align: left;
+}
+
+/* Blinking cursor */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  background-color: #00ff00;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { background-color: transparent; }
+}
+
+/*MELTDOWN*/
+#game {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: black;
+    font-family: Courier, monospace;
+    color: #9FA182;
+    user-select: none;
+}
+
+/* Color panels */
+#game .canvas {
+    width: 185px;
+    height: 185px;
+    background: grey;
+    position: absolute;
+    top: 10px;
+}
+
+#game #canvas1 { left: 10px; }
+#game #canvas2 { left: 205px; }
+
+/* RGB sliders */
+#game input[type=range] {
+    width: 185px;
+    height: 35px;
+    position: absolute;
+    left: 10px;
+    display: none;
+}
+
+#game #r { top: 205px; background: red; }
+#game #g { top: 270px; background: green; }
+#game #b { top: 335px; background: blue; }
+
+/* Start / Fire button */
+#game button {
+    position: absolute;
+    left: 205px;
+    top: 205px;
+    width: 120px;
+    height: 70px;
+    font-family: inherit;
+    background: grey;
+    cursor: pointer;
+}
+
+/* Timer */
+#game #timer {
+    position: absolute;
+    right: 10px;
+    top: 205px;
+    font-size: 12px;
+}
+
+/* Message / narrative text */
+#game #message {
+    position: absolute;
+    left: 11px;
+    top: 205px;
+    width: 180px;
+    font-size: 12px;
+    color: #D3FF33;
+    white-space: pre-line;
+}
+
+/* Stats */
+#game #stats {
+    position: absolute;
+    left: 205px;
+    top: 280px;
+    font-size: 12px;
+}
+
+/* Scoreboard */
+#game #scoreboard {
+    position: absolute;
+    left: 205px;
+    bottom: 10px;
+    font-size: 12px;
+}
+
+
+
+/* =========================
+   GLOBAL SAFETY NET
+   ========================= */
+
+
+
+
+.frame-wrapper {
+  width: 100%;
+  max-width: 100%;
+
+  /* This is the viewport */
+  height: 260px;                 /* adjust if needed */
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  /* Optional visual debugging */
+  /* border: 1px solid rgba(255,255,255,0.2); */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+canvas,
+table,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   SCROLLING COLUMNS
+   ========================= */
+
+.scroll-col {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Optional extra safety */
+.col-md-6 {
+  overflow-x: hidden;
+}
+
+/* =========================
+   FRAME CONTAINER
+   ========================= */
+
+#frameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  /* CRITICAL FOR BOOTSTRAP */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  min-height: 220px;
+  transition: all 0.6s ease;
+}
+
+/* =========================
+   FRAME IMAGES
+   ========================= */
+
+.frame {
+  width: 100px;
+  max-width: 100%;
+  height: auto;
+
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.6s ease;
+}
+
+/* Large intro frame */
+.frame.large {
+  width: min(300px, 100%);
+  max-width: 100%;
+
+  transform: scale(1.1);
+  margin: 0 auto;
+}
+
+/* Frames that vanish */
+.frame.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+/* Exit animation */
+.rise-fade {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+/* =========================
+   OPTIONAL RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 768px) {
+  .frame {
+    width: 80px;
+  }
+
+  .frame.large {
+    width: 100%;
+    transform: scale(1);
+  }
+}
+
+
+/*BOUNCE*/
+
 #bouncing-container {
   position: relative;
   width: 100%;
@@ -36,117 +392,29 @@
   transition: transform 0.1s;
 }
 
-/* TEXT FORMATTING */
-@import url('https://api.fontshare.com/v2/css?f[]=switzer@400,700&display=swap');
-
-.title{
-  font-family: 'Switzer', sans-serif;
-  font-weight: 700;
-  font-size: 4.5em;
-  margin: 5%;
+/* Embed Video */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* optional */
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  margin: 2vh;
 }
 
-.body-text {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1.2em;
-  margin: 5%;
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-.subheader {
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 1.5em; /* Optional: adjust size as needed */
-    font-weight: bold; /* Optional: make it stand out */
-    margin-bottom: 10px; /* Optional: spacing below */
-  }
-  .margin{
-    margin: 5%;
-  }
-  /* IMAGE FORMATTING */
-  .image-format {
-    margin: 5%;
-  }
-
-  /* GET RID OF OVERFLOW */
-
-  body {
-    margin: 5% 10% 10% 10%; /* top right bottom left */
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;  /* Always show vertical scrollbar */
-    overflow: hidden; /* Prevents all scrollbars */
-    height: 100%; 
-  }
-  html {
-    overflow-y: scroll;  /* Always reserve scrollbar space */
-  }
 
 
 
-  #upBtn {
-    position: fixed;
-    font-family: Verdana, Geneva, sans-serif;
-    top: 20px;         /* Distance from top */
-    right: 20px;       /* Distance from right edge */
-    padding: 12px 24px;
-    font-size: 16px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-  }
-  
-  #upBtn:hover {
-    background-color: #444;
-  }
-  
-  #downBtn {
-    position: fixed;
-    font-family: Verdana, Geneva, sans-serif;
-    bottom: 20px;      /* Distance from bottom */
-    right: 20px;       /* Distance from right edge */
-    padding: 12px 24px;
-    font-size: 16px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-  }
-  
-  #downBtn:hover {
-    background-color: #444;
-  }
-
-  #page-transition-overlay {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: white;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 9999;
-  }
 
 
-  .gist-container {
-    max-width: 800px;
-    max-height: 400px;
-    overflow: auto;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-    background-color: #1e1e1e; /* dark background like VS Code */
-    padding: 10px;
-  }
 
-  .gist-container * {
-    color: black !important; /* light text */
-  }
+
+

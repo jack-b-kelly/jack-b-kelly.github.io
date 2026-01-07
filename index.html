@@ -5,97 +5,335 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Jack Kelly - Portfolio</title>
+    <title>Jack Kelly Portfolio</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/frame_animation.css" rel="stylesheet">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="js/transition.js"></script>
+
+
 
   </head>
   <body>
-    
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="text-center">
-          </h3>
-          <h3 class="text-center title">
-            Jack Kelly - Portfolio
-          </h3>
+	<div class="row">
+		<div class="col-md-3">
+      <h1>Jack Kelly</h1>
+      <i>
+      Brooklyn, NY<br>
+      (484) 620-9550<br>
+      jkelly123email@gmail.com<br>
+      </i><br>
+      <br>
+      Business professional with experience managing dynamic and evolving projects. Possesses capabilities to close complex sales with multiple parties and government constraints.
+      <p></p>
+      <img src="images/IMG_0423.jpg" alt="Description" class="jack-picture">
+		</div>
+		<div class="col-md-6 scroll-col">
+      <div class="shadow-dance-container">
+        <h1 class="shadow-dance-text">PROJECTS</h1>
+        <h2><b>Project 1:</b> Bulk Email Application</h2>
+        <p>
+         An email application that is almost <b>too</b> efficient. 
+        </p>
+      <div id="emailApp">
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-tab="write">Write Email</div>
+    <div class="tab" data-tab="saved">Saved Emails</div>
+    <div class="tab" data-tab="timeline">Campaign Timeline</div>
+  </div>
+
+  <!-- Write Email Tab -->
+  <div id="write" class="tab-content active">
+    <select id="campaignSelect">
+      <option value="">Select Campaign</option>
+      <option value="Campaign 1">Campaign 1</option>
+      <option value="Campaign 2">Campaign 2</option>
+      <option value="Campaign 3">Campaign 3</option>
+    </select>
+    <input type="text" placeholder="To:">
+    <input type="text" placeholder="Subject:">
+    <textarea rows="5" placeholder="Write your message..."></textarea>
+    <button>Save Email</button>
+  </div>
+
+  <!-- Saved Emails Tab -->
+  <div id="saved" class="tab-content">
+  <table>
+    <tr>
+      <th>To</th>
+      <th>Subject</th>
+      <th>Date</th>
+      <th>Campaign</th>
+    </tr>
+    <tr>
+      <td>john@example.com</td>
+      <td>Hello</td>
+      <td>2025-12-20</td>
+      <td>
+        <select class="assignCampaign">
+          <option value="">None</option>
+          <option value="Campaign 1">Campaign 1</option>
+          <option value="Campaign 2">Campaign 2</option>
+          <option value="Campaign 3">Campaign 3</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>jane@example.com</td>
+      <td>Follow Up</td>
+      <td>2025-12-21</td>
+      <td>
+        <select class="assignCampaign">
+          <option value="">None</option>
+          <option value="Campaign 1">Campaign 1</option>
+          <option value="Campaign 2">Campaign 2</option>
+          <option value="Campaign 3">Campaign 3</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+</div>
+
+  <!-- Campaign Timeline Tab -->
+  <div id="timeline" class="tab-content">
+    <ul>
+      <li>
+        Campaign 1 
+        <select class="senderSelect">
+          <option value="sender1@example.com">sender1@example.com</option>
+          <option value="sender2@example.com">sender2@example.com</option>
+        </select>
+        <button class="playBtn">Play</button>
+      </li>
+      <li>
+        Campaign 2
+        <select class="senderSelect">
+          <option value="sender1@example.com">sender1@example.com</option>
+          <option value="sender2@example.com">sender2@example.com</option>
+        </select>
+        <button class="playBtn">Play</button>
+      </li>
+      <li>
+        Campaign 3
+        <select class="senderSelect">
+          <option value="sender1@example.com">sender1@example.com</option>
+          <option value="sender2@example.com">sender2@example.com</option>
+        </select>
+        <button class="playBtn">Play</button>
+      </li>
+    </ul>
+  </div>
+
+</div>
+<br>
+<p>First, create an email and assign it to a campaign. Then assign each campaign a sender email <i>(you could send emails from 25 email accounts if you wanted)</i>. Campaigns can be turned on and off; and you can tinker with each message to send at custom intervals.</p><br>
+<p><b>Use Case:</b> While working at Phillips Auctioneers one of my tasks was to manage hundreds of fine art shipments. Each shipment had three parties to coordinate: <i>1) the client 2) the warehouse 3) the shipper.</i></p><br>
+<p>I used a variation of this program to update all relevant parties for each shipment. And also to continuously ping stalled shipments to keep them moving. <b>I used my application to ship thousands of works of art in hundreds of shipments.</b> By the way, in terms of "weight"; these artworks were by artists like Picasso, Monet, Georgia O'Keefe and more. During one of my shipments a Jeff Koons sculpture of a balloon dog fell and cracked, but my hands were clean and we had insurance and everyone was made whole!</p>
+<div id="bouncing-container"></div>
+
+
+
+
+        <h2><b>Project 2:</b> Data Scraping</h2>
+        
+        <h3>Email/Phone Number Extractor</h3>
+
+        <p>Get as many emails/phone numbers as you can think of queries.</p>
+        <div id="terminal"></div>
+        <br>
+        <p>I built a script to collect emails and phone numbers from websites using Python's Selenium module. And with alot of tinkering, found the correct mixture of delays and timeouts per page to run the program continuously without stalling out or being stopped by bot-detectors.</p>
+        <br>
+        <p>The program queries DuckDuckGo and accepts as many inputs as you can think of; you can specify the specific website you are looking for (Linkedin.com for example) by writing site:linkedin.com at the end of the query.</p>
+        <br>
+        <p>Getting creative in order to feed the program with a list of queries; I wrote a script using Python's Natural Language Toolkit (NLTK).</p>
+        
+        <h3>Dropbox Metadata Extractor</h3>
+        <p>I was tasked with organizing an expansive Dropbox account with no discernible structure.</p>
+        <br>
+        <p>After some research; I found out that Dropbox has an API that allows you pull metadata on files, automate uploading/downloading of files to your account, and perform bulk actions on your files such as renaming and moving files between folders.</p>
+        <br>
+        <p>I used this API to organize the Dropbox account, I renamed the files in a useful fashion and created a hierarchy of information.</p>
+        <br>
+        <p>Furthermore, we were primarily working with large video files and there was an issue with the files taking hours to download. Using the API, I set up a processes to download the large video files; splice them into more manageable chunks, and then upload the chunks to the server so that the videos could be quickly downloaded and used. I explain how to use the API in the following videos:</p>
+        <br>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/jhnztcPok4Q"
+            title="Dropbox Metadata pt. 1"
+            allowfullscreen>
+          </iframe>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <h3 class="text-center subheader">
-            ---------
-            <div>
-              Forward
-            </div>
-            <div>
-              ---------
-            </div>
-          </h3>
-          <p class ="body-text">
-            Please see the following collection of projects I have accumulated over the beginning of my career.<br><br>
-            Once, I had to test a new software at work; I told my boss that I couldn't figure it out. He said simply:<br><br>
-            "The answer is there!"<br><br>
-            He didn't mean it beyond that specific situation; but he was right, the answer is in fact there; and usually found with the tool-kit laid at your feet.<br><br>
-            Thank you!!<br><br>
-            Jack 8-)
-          </p>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/UdX3Qt2i3aM"
+            title="Dropbox Metadata pt. 2"
+            allowfullscreen>
+          </iframe>
         </div>
-        <div class="col-md-4">
-          <h3 class="text-center subheader">
-            ---------
-            <div>
-              Rain
-            </div>
-            <div>
-              ---------
-            </div>
-          </h3>
-          <div id="rain-container" class='text-center'>
-            <pre id="rain"></pre>
+        
+
+        
+
+
+<link rel="stylesheet" href="styles.css">
+
+        <br>
+        <p>Code: </p>
+        <h2><b>Project 3:</b> Blur Detection</h2>
+        <p>Worked on a data collection project. Used FFMPEG to pull frames from source video without any quality loss. Then used Python OpenCV the % blur of each frame to get an "average blur". Every frame that was below two standard deviations of the average blur was deleted. This standarized the data collection and massively sped the mundane process.</p>
+      
+
+
+        <div class="frame-wrapper">
+          <div id="frameContainer">
+    <!-- frame images go here -->
           </div>
-          
         </div>
-        <div class="col-md-4">
-          <h3 class="text-center subheader">
-            ---------
-            <div>
-              Project Index
-            </div>
-            <div>
-              ---------
-            </div>
-          </h3>
-          <ol class="body-text">
-            <li class="list-item">
-              <b>Blur Detector</b> - TGI Sport 
-            </li>
-            <li class="list-item">
-              <b>Shipping Server</b> - Phillips Auctioneers
-            </li>
-            <li class="list-item">
-              <b>Email Scraping/Email Blast System
-            </li>
-          </ol>
-        </div>
+        <h3>Further OpenCV Exploration</h3>
+
+
+
+        <h2><b>Bonus:</b> Meltdown</h2>
+        <p>Here's your reward for scrolling down this far.</p>
+        <br>
+        <p>"Meltdown" is a game color-matching game I created. The premise is that there is an impending meltdown on humanity's Venus colony, and the user, who works at the doomed power station must match the color of hostile gama-rays. You have 10 seconds to match each gamma-ray color by sliding the color bars, and you keep going until you fail to match the color. </p>
+        <br>
+        <div id="game">
+
+    <div id="canvas1" class="canvas"></div>
+    <div id="canvas2" class="canvas"></div>
+
+    <input id="r" type="range" min="0" max="255">
+    <input id="g" type="range" min="0" max="255">
+    <input id="b" type="range" min="0" max="255">
+
+    <button id="start">Start</button>
+
+    <div id="timer">Time:</div>
+
+    <div id="message">
+##SITUATION REPORT##
+POWER-STATION VENUS is close
+to a catastrophic meltdown.
+You have 10 seconds to
+counteract each HOSTILE
+gamma ray with >60%
+accuracy.
+Your death serves
+the FEDERATION.
+<br>
+<br>
+    </div>
+
+    <div id="stats">
+Accuracy: 0
+
+Remaining Civilians:
+5000000
+    </div>
+
+    <div id="scoreboard">
+Score: 0
+
+High Score: 0
+    </div>
+    <br>
+    <br>
+
+</div>
       </div>
-      <div class="floating-buttons">
-        <button id="upBtn">[UP]</button>
-        <button id="downBtn">[DOWN]</button>
-      </div>
+		</div>
+		<div class="col-md-3 scroll-col">
+      <h2>Experience</h2>
+      <br>
+    <strong>Senior Sales Associate</strong><br>
+<i>
+Kleanix Facility Services<br>
+December 2024 – Present, New York, NY</i><br>
+<br>
+
+Worked as a salesperson for a cleaning and building maintenance company, engaging non-profit homeless shelter providers.<br>
+<br>
+<p>
+<ul>
+  <li>Closed $1.3M in facilities maintenance contracts</li>
+  <li>Researched and scraped leads for sales team using Python (Selenium, Pandas)</li>
+  <li>Analyzed company’s competitive advantages to develop a differentiated sales strategy</li>
+  <li>Navigated selling to non-profit entities requiring buy-in from multiple stakeholders</li>
+  <li>Conducted site walkthroughs and wrote comprehensive proposals in response to competitive RFPs</li>
+</ul>
+</p>
+<br>
+<strong>Post-Sale Administrator</strong><br>
+<i>Phillips Auctioneers<br>
+December 2023 – December 2024, New York, NY</i><br>
+<br>
+
+Contracted to build post-sale operations at Phillips and execute a consolidation of warehouses to reduce insurance and storage expenses.<br>
+<br>
+<p>
+<ul>
+  <li>Analyzed internal databases to identify stagnant property and navigate litigation and specialist-client relationships</li>
+  <li>Worked with specialists and clients to reintroduce property to Phillips auctions with high estimates totaling $70M</li>
+  <li>Coordinated fine art shipments that reunited clients with property and saved ~$65K/month in storage and insurance fees</li>
+</ul>
+</p>
+<br>
+<strong>Junior Operations Manager</strong><br>
+<i>TGI Sport<br>
+August 2022 – August 2023, New York, NY</i><br>
+<br>
+
+Worked on virtual ad placement technology, developing automated data collection processes following the company’s acquisition by TGI Sport.<br>
+<br>
+<p>
+<ul>
+  <li>Managed a team of 6 data collectors</li>
+  <li>Used Python (OpenCV, TensorFlow, Matplotlib) to quantify image blur and establish dataset quality baselines, increasing data collection speed by 50%</li>
+  <li>Repurposed image recognition scripts to extract advertisements from raw footage, reducing video-editing time</li>
+  <li>Created and maintained a footage database with standardized file naming conventions</li>
+</ul>
+</p>
+<br>
+<h2>Education</h2>
+      <br>
+<strong>Eastern University — MS in Data Science</strong><br>
+Online Program, Expected Graduation June 2026 – St Davids, PA<br>
+<br>
+
+Relevant coursework:<br>
+<ul>
+  <li>Data Analytics in R</li>
+  <li>Data and Database Management with SQL</li>
+  <li>Introduction to Statistical Modeling</li>
+  <li>Foundations of Machine Learning Models</li>
+</ul>
+
+<strong>Temple University — BFA in Ceramics</strong><br>
+Minor in General Business Studies – Philadelphia, PA<br>
+<br>
+
+Relevant coursework:<br>
+<ul>
+  <li>Leadership and Organizational Management</li>
+  <li>Intermediate Accounting</li>
+  <li>Microeconomic Principles</li>
+</ul>
+<br><br>
+
+		</div>
+	</div>
+</div>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="js/rain.js"></script>
-    <div id="page-transition-overlay"></div>
+     <script src="queryGenerator.js"></script>
   </body>
 </html>

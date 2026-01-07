@@ -1,0 +1,39 @@
+.query-generator {
+  font-family: system-ui, sans-serif;
+  max-width: 600px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.placeholder-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.placeholder-buttons button {
+  font-size: 12px;
+  padding: 6px 8px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  border-radius: 4px;
+}
+
+.placeholder-buttons button:hover {
+  background: #eee;
+}
+
+#templateInput {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#results {
+  margin-top: 12px;
+  padding-left: 20px;
+}
