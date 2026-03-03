@@ -194,6 +194,13 @@ input, textarea, select, button {
    MELTDOWN GAME
    ========================= */
 
+#game-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 #game {
   width: 400px;
   height: 400px;
@@ -375,10 +382,7 @@ input, textarea, select, button {
   }
 
   #game {
-    width: 100%;
-    height: auto;
-    transform: scale(0.9);
-    transform-origin: top left;
+    transform-origin: top center;
   }
 
   .jack-picture {
@@ -394,5 +398,16 @@ input, textarea, select, button {
     width: 100%;
     transform: scale(1);
   }
+}
 
+@media (max-width: 480px) {
+  #game {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 380px) {
+  #game {
+    transform: scale(0.7);
+  }
 }
